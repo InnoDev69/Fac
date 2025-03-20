@@ -1,0 +1,31 @@
+<div class="notes-view">
+    <div class="view-header">
+        <h1>Anotaciones</h1>
+    </div>
+    
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="notes-search" placeholder="Buscar anotaciones...">
+        </div>
+        <button class="btn btn-primary" id="new-note-btn">
+            <i class="fas fa-plus"></i>
+            Nueva Nota
+        </button>
+    </div>
+    
+    <div class="notes-grid" id="notes-grid">
+        <!-- Las notas se cargarán dinámicamente aquí -->
+    </div>
+    
+    <div class="empty-state" id="empty-notes" style="display: none;">
+        <i class="fas fa-sticky-note"></i>
+        <h3>No hay anotaciones</h3>
+        <p>Crea una nueva anotación para empezar</p>
+        <button class="btn btn-primary" id="create-note-btn">
+            <i class="fas fa-plus"></i>
+            Nueva Nota
+        </button>
+    </div>
+</div>
+

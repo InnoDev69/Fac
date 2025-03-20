@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpeta Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Carpeta Digital</h2>
+                <button id="close-sidebar" class="close-sidebar-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="user-profile">
+                <div class="avatar">UN</div>
+                <div class="user-info">
+                    <h3>Usuario</h3>
+                    <p>Facultad de Ciencias</p>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-view="documents">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Documentos</span>
+                    </li>
+                    <li class="nav-item" data-view="calendar">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Calendario</span>
+                    </li>
+                    <li class="nav-item" data-view="notes">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>Anotaciones</span>
+                    </li>
+                </ul>
+                
+                <div class="sidebar-divider"></div>
+                
+                <h4 class="sidebar-subtitle">Carpetas</h4>
+                <ul>
+                    <li class="nav-item">
+                        <i class="fas fa-folder"></i>
+                        <span>Matemáticas</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-folder"></i>
+                        <span>Física</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-folder"></i>
+                        <span>Programación</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-folder"></i>
+                        <span>Química</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="btn btn-outline">
+                    <i class="fas fa-plus"></i>
+                    Nueva Carpeta
+                </button>
+                <button class="btn btn-text">
+                    <i class="fas fa-cog"></i>
+                    Configuración
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mobile Header -->
+            <header class="mobile-header">
+                <button id="open-sidebar" class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="page-title">Documentos</h1>
+                <button class="action-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </header>
+            
+            <!-- Content Container -->
+            <div class="content-container" id="content-container">
+                <!-- El contenido se cargará dinámicamente aquí -->
+                <div id="loading-spinner" class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+
