@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpeta Digital Académica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Barra lateral -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>Carpeta Digital</h1>
+                <button id="toggle-sidebar" class="mobile-only">≡</button>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <h2>Mis Carpetas</h2>
+                    <ul id="folders-list">
+                        <!-- Se llenará con JavaScript -->
+                    </ul>
+                    <button id="add-folder" class="btn-add">+ Nueva Carpeta</button>
+                </div>
+                <div class="sidebar-section">
+                    <h2>Calendario</h2>
+                    <button id="view-calendar" class="btn-secondary">Ver Calendario</button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content" id="main-content">
+            <!-- Vista de carpetas -->
+            <div id="folders-view" class="content-view active">
+                <div class="content-header">
+                    <h2 id="current-folder-name">Mis Documentos</h2>
+                    <button id="add-document" class="btn-primary">+ Nuevo Documento</button>
+                </div>
+                <div class="documents-grid" id="documents-container">
+                    <!-- Se llenará con JavaScript -->
+                </div>
+            </div>
+
+            <!-- Vista de documento -->
+            <div id="document-view" class="content-view">
+                <div class="content-header">
+                    <button id="back-to-folder" class="btn-back">← Volver</button>
+                    <h2 id="current-document-name">Documento</h2>
+                    <button id="save-document" class="btn-primary">Guardar</button>
+                </div>
+                <div class="document-editor">
+                    <input type="text" id="document-title" placeholder="Título del documento">
+                    <div class="editor-toolbar">
+                        <button data-action="bold"><b>B</b></button>
+                        <button data-action="italic"><i>I</i></button>
+                        <button data-action="underline"><u>U</u></button>
+                        <button data-action="heading">H</button>
+                        <button data-action="list">• Lista</button>
+                    </div>
+                    <div id="document-content" class="editor-content" contenteditable="true"></div>
+                </div>
+            </div>
+
+            <!-- Vista de calendario -->
+            <div id="calendar-view" class="content-view">
+                <div class="content-header">
+                    <button id="back-to-main" class="btn-back">← Volver</button>
+                    <h2>Calendario</h2>
+                    <button id="add-event" class="btn-primary">+ Nuevo Evento</button>
+                </div>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month">◀</button>
+                        <h3 id="current-month">Marzo 2025</h3>
+                        <button id="next-month">▶</button>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <!-- Se llenará con JavaScript -->
+                    </div>
+                    <div class="events-list" id="events-list">
+                        <h3>Eventos</h3>
+                        <ul id="events-container">
+                            <!-- Se llenará con JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modales -->
+    <div class="modal" id="folder-modal">
+        <div class="modal-content">
+            <h2>Nueva Carpeta</h2>
+            <input type="text" id="folder-name" placeholder="Nombre de la carpeta">
+            <div class="modal-buttons">
+                <button id="cancel-folder" class="btn-secondary">Cancelar</button>
+                <button id="create-folder" class="btn-primary">Crear</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="event-modal">
+        <div class="modal-content">
+            <h2>Nuevo Evento</h2>
+            <input type="text" id="event-title" placeholder="Título del evento">
+            <input type="date" id="event-date">
+            <textarea id="event-description" placeholder="Descripción"></textarea>
+            <div class="modal-buttons">
+                <button id="cancel-event" class="btn-secondary">Cancelar</button>
+                <button id="create-event" class="btn-primary">Crear</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
